@@ -1,4 +1,4 @@
-import { Home, About, ContactUs, Barbers } from './components/pages';
+import { Home, About, ContactUs, Barbers,Store,Cart} from './components/pages';
 import { Route, Routes } from 'react-router-dom';
 import { useContext } from 'react';
 import { usersContext } from './contexts/users-context';
@@ -14,8 +14,10 @@ export default function Router() {
             <Header />
             <Routes>
               <Route path="/" element={<Barbers />} />
-
+             
               <Route path="/About" element={<About />} />
+              <Route path="/Store" element={<Store />} />
+              <Route path="/Cart" element={<Cart />} />
               <Route path="/ContactUs" element={<ContactUs />} />
             </Routes>
           </>
