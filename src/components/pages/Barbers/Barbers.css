@@ -1,0 +1,32 @@
+.div-cards{
+    background-image: url("https://images.pexels.com/photos/897270/pexels-photo-897270.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.img-card{
+    max-height: 300px;
+}
+
+.card{
+    max-width: 390px;
+    margin: auto;
+}
+@media only screen and (max-width: 600px) {
+    .card{
+        max-width: 100%;
+    }
+    .div-cards{
+        background-image: url("https://images.pexels.com/photos/1813346/pexels-photo-1813346.jpeg?auto=compress&cs=tinysrgb&w=1600");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+  }
+  .div-load-more{
+    width: 100%;
+    /* height: %; */
+    text-align: center;
+  }
