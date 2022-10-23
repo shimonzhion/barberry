@@ -46,15 +46,16 @@ export default function SignInSide() {
     });
    if (data.get("email")&& data.get("password")){
     try {
-      
       await auth.signInWithEmailAndPassword(data.get("email"),data.get("password"))
-      console.log('yes')
-      return setLogin(true)
+ setLogin(true)
 
     } catch (error) {
       console.log('error logging in',error);
+    
     }
+    
   };
+ 
 }
 
   return (
