@@ -21,9 +21,9 @@ const Cart = () => {
             <div>
               <h1>Your Cart is Empty</h1>{' '}
               <img
-                className="mt-5"
+                className="gif-cart mt-5"
                 src="images/empty.gif"
-                style={{ width: '500px' }}
+                style={{ width: '40%' }}
                 alt=""
               />
             </div>

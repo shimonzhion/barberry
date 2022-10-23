@@ -69,12 +69,11 @@ function Barbers() {
           </InputGroup>
           <div>
             <select
-              className="form-select mx-5"
-              aria-label="Default select example"
+              className="select-filter"
+              // aria-label="Default select example"
               onChange={(e) => setSearchSelect(e.target.value)}
             >
               <option value="">select city</option>
-
               <option value={'Rishon Lzion'}>Rishon Lzion</option>
               <option value="Tel Aviv-Yafo">Tel Aviv-Yafo</option>
               <option value="Beer Sheva">Beer Sheva</option>
@@ -82,7 +81,7 @@ function Barbers() {
           </div>
         </div>
         {loading}
-        <div className="d-flex flex-wrap">
+        <div className="d-flex flex-wrap justify-content-center justify-content-around ">
           <SearchFilter
             value={searchInput || searchSelect}
             data={productData}

@@ -18,6 +18,7 @@ margin-bottom: 50px;
 }
 .div-form{
     width: 80%;
+    background-color: rgba(255, 255, 255, 0.091);
 
 }
 .form-contact{
@@ -28,6 +29,7 @@ width: 100%;
     width: 800px;
     justify-content: center;
     align-items: center;
+
     
 }
 
@@ -55,6 +57,7 @@ width: 20%;
             justify-content: center;
             align-items: center;
             padding-top: 30px;
+            
           
         }
         .div-form{
