@@ -1,0 +1,87 @@
+
+.contact-us{
+display: flex;
+justify-content: center;
+background: url('https://images.pexels.com/photos/7697393/pexels-photo-7697393.jpeg?auto=compress&cs=tinysrgb&w=1600');
+background-size: 75vw;
+width: 60%;
+min-height: 95vh;
+}
+
+
+.contact-us h1{
+
+margin-top: 70px;
+color: white;
+margin-bottom: 50px;
+
+}
+.div-form{
+    width: 80%;
+
+}
+.form-contact{
+width: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form-contact button{
+width: 20%;
+
+
+}
+.inputs{
+    width: 50%;
+    background: white;
+  
+}
+.div-container{
+    max-height: 95vh;
+} 
+
+@media only screen and (max-width: 600px) {
+    .form-contact{
+        
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            width: 390px;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+          
+        }
+        .div-form{
+            width: 100%;
+        
+        }
+        .contact-us h1{
+
+            margin-top: 70px;
+            color: white;
+            margin-bottom: 30px;
+            
+            }
+        .contact-us{
+            display: flex;
+            justify-content: center;
+            background: url('https://images.pexels.com/photos/7389077/pexels-photo-7389077.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-repeat: no-repeat;
+            background-size: cover;
+           min-height: 95vh;
+            width: 100vw;
+           
+            }
+            .inputs{
+                width: 80%;
+                background: white;
+              
+            }
+
+  }

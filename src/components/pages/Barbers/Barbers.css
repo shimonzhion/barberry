@@ -1,11 +1,18 @@
-.div-cards{
+.div-barbers{
     background-image: url("https://images.pexels.com/photos/897270/pexels-photo-897270.jpeg?auto=compress&cs=tinysrgb&w=1600");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
+    padding-top: 70px;
+    width: 80vw;
+   
 }
 
+
+.div-c{
+    max-width: 100vw;
+}
 .img-card{
     max-height: 300px;
 }
@@ -18,15 +25,29 @@
     .card{
         max-width: 100%;
     }
-    .div-cards{
+    .div-barbers{
         background-image: url("https://images.pexels.com/photos/1813346/pexels-photo-1813346.jpeg?auto=compress&cs=tinysrgb&w=1600");
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
+        padding-top: 40px;
     }
   }
+
   .div-load-more{
     width: 100%;
     /* height: %; */
     text-align: center;
+    
   }
+  .arrow-gif{
+    max-width: 20%;
+    margin-bottom: 0px;
+  }
+ .btn-shoeMore{
+    max-width: 40%;
+    margin-top: 0px;
+ }
+ .search-input-barbers{
+  max-width: 300px;
+ }

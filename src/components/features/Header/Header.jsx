@@ -20,8 +20,8 @@ import { useState } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { usersContext } from '../../../contexts/users-context';
 import { useNavigate } from 'react-router-dom';
-import { BiSun, BiMoon, BiCart} from 'react-icons/bi';
-import { useCart } from "react-use-cart";
+import { BiCart } from 'react-icons/bi';
+import { useCart } from 'react-use-cart';
 
 const drawerWidth = 240;
 
@@ -30,15 +30,12 @@ export default function Header() {
   const { login, setLogin } = useContext(usersContext);
   const [auth, setAuth] = useState(login);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navItems = ['Store', 'About', 'ContactUs'];
+  const navItems = ['Store', 'ContactUs'];
 
   useEffect(() => setAuth(login), []);
   console.log(auth, 'header');
 
-  const {
-    isEmpty,
-    totalItems,
-} = useCart();
+  const { isEmpty, totalItems } = useCart();
 
   const handleChange = () => {
     setLogin(false);
@@ -123,9 +120,8 @@ export default function Header() {
               component="div"
               sx={{ display: { xs: 'none', sm: 'block' } }}
             >
-              {/* user Img */}
               {auth && (
-                <div className='d-flex'>
+                <div className="d-flex">
                   <IconButton
                     size="large"
                     aria-label="account of current user"
@@ -135,17 +131,20 @@ export default function Header() {
                   >
                     <AccountCircle />
                   </IconButton>
-      
-                 <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                <Button href={`/Store`} key={'Simple-ecart'} sx={{ color: '#fff' ,border:"5px black solid"}}>
-                  {'Simple-ecart'}
-                </Button></Box>
-      
+
+                  <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                    <Button
+                      href={`/Store`}
+                      key={'Simple-ecart'}
+                      sx={{ color: '#fff', border: '5px black solid' }}
+                    >
+                      {'Simple-ecart'}
+                    </Button>
+                  </Box>
                 </div>
               )}
-
-              {/* menu button mobile screen */}
             </Typography>
+
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -153,7 +152,6 @@ export default function Header() {
               onClick={auth ? handleDrawerToggle : null}
               sx={{ mr: 2, display: { sm: 'none' } }}
             >
-            
               <MenuIcon />
             </IconButton>
             <Typography
@@ -162,29 +160,54 @@ export default function Header() {
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             ></Typography>
 
+            <Button
+              href={`/Cart`}
+              key={'cart'}
+              sx={{ display: { xs: 'block', sm: 'none', color: '#fff' } }}
+            >
+              <BiCart size="2rem" />
+              {!isEmpty && (
+                <span
+                  style={{
+                    left: '-21px',
+                    top: '-18px',
+                    color: 'red',
+                    fontSize: '19px',
+                    fontWeight: '5px',
+                    textShadow: '0px 0px 17px white',
+                  }}
+                >
+                  {totalItems}
+                </span>
+              )}
+            </Button>
+
             {auth ? (
-              
               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                <Button href={`/Cart`} key={'cart'} sx={{ color: '#fff' }}>
+                  <BiCart size="2rem" />
+                  {!isEmpty && (
+                    <span
+                      style={{
+                        position: 'relative',
+                        left: '-1px',
+                        top: '-11px',
+                        color: 'red',
+                        fontSize: '19px',
+                        fontWeight: '5px',
+                        textShadow: '0px 0px 12px white',
 
-           <Button href={`/Cart`} key={'cart'} sx={{ color: '#fff' }}>
-                   <BiCart size="2rem"/>
-                {!isEmpty && <span style={{ position: 'relative', left: '-21px', top: '-18px'}}>{totalItems}</span>}
-                <span style={{ marginLeft: !isEmpty ? '-13px': 0}}>Cart</span>
-                  </Button>
-
+                        zIndex: '1',
+                      }}
+                    >
+                      {totalItems}
+                    </span>
+                  )}
+                </Button>
 
                 <Button href={`/`} key={'Barbers'} sx={{ color: '#fff' }}>
                   {'Barbers'}
                 </Button>
-                {/* <Link
-                to="/cart"
-                className={'text-dark-primary d-flex align-items-center'}
-              >
-                <BiCart size="2rem"/>
-                {!isEmpty && <span style={{ position: 'relative', left: '-21px', top: '-18px'}}>{totalItems}</span>}
-                <span style={{ marginLeft: !isEmpty ? '-13px': 0}}>Cart</span>
-              </Link> */}
-              
 
                 {navItems.map((item) => (
                   <Button href={`/${item}`} key={item} sx={{ color: '#fff' }}>
@@ -220,7 +243,7 @@ export default function Header() {
             open={mobileOpen}
             onClose={handleDrawerToggle}
             ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
+              keepMounted: true,
             }}
             sx={{
               display: { xs: 'block', sm: 'none' },

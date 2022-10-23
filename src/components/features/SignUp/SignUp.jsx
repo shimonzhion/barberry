@@ -46,9 +46,6 @@ export default function SignUp() {
     } catch (error) {
       console.log(error);
     }
-    //   setUsers([...users,userData])
-    // setToggle(false)
-    // return(localStorage.setItem('newUser',JSON.stringify(userData)))
   };
 
   return (
@@ -146,7 +143,7 @@ export default function SignUp() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              // onClick={()=>setToggle(false)}
+              
             >
               Sign Up
             </Button>

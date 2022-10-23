@@ -5,17 +5,17 @@ import { useCart } from 'react-use-cart';
 import { BsCartPlus } from 'react-icons/bs';
 
 const ProductCard = (props) => {
-    let { image, price, title} = props.data;
+    let { image, price, title,title2} = props.data;
     // const [theme] = useThemeHook();
     const { addItem } = useCart();
-
+console.log(props.data);
     const addToCart = () =>{
         addItem(props.data);
     }
     return (
         <Card 
             style={{ width: '18rem', height: 'auto' }}
-            className={'bg-lihgt text-black text-center p-0 overflow-hidden shadow mx-auto mb-4'}
+            className={' text-black text-center p-0 overflow-hidden shadow mx-auto mb-4'}
         >
             <div style={{ background: 'white', height: '15rem', overflow: 'hidden', display: 'flex',
             justifyContent: 'center', alignItems: 'center', marginBottom: 'inherit' }}>
@@ -25,10 +25,11 @@ const ProductCard = (props) => {
             </div>
             <Card.Body>
                 <Card.Title style={{ textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap'}}>
-                    {title}
+                    {title2}
                 </Card.Title>
+                <span>{title}</span>
                 <Card.Title>
-                    Rs. <span className="h3">{price}</span>
+                    $ <span className="h3">{price}</span>
                 </Card.Title>
                 <Button
                     onClick={()=> addToCart()}

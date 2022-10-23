@@ -6,7 +6,7 @@ import Header from './components/features/Header/Header';
 export default function Router() {
   const { login, setLogin } = useContext(usersContext);
 
-  function someFunc(login) {
+  function logInOut(login) {
     switch (login) {
       case true:
         return (
@@ -34,5 +34,5 @@ export default function Router() {
     }
   }
 
-  return someFunc(login);
+  return logInOut(login);
 }

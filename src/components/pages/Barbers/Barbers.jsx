@@ -1,77 +1,156 @@
-import "./Barbers.css";
-import React, { useContext,useState,useEffect } from "react";
-import { barbersContext } from "../../../contexts/barbers-context";
-
+import './Barbers.css';
+import React, { useContext, useState, useEffect } from 'react';
+import { BiSearch } from 'react-icons/bi';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { height, maxWidth } from "@mui/system";
 import GradeTwoToneIcon from '@mui/icons-material/GradeTwoTone';
-
+import SearchFilter from 'react-filter-search';
+import { Container, Row, Col, InputGroup, FormControl } from 'react-bootstrap';
 
 function Barbers() {
-  const {barbers} = useContext(barbersContext)
-  const [visible,setVisible] = useState(3)
+  const [arrow, setArrow] = useState(
+    'https://media.baamboozle.com/uploads/images/472614/1652055757_15929_gif-url.gif'
+  );
+  const [searchInput, setSearchInput] = useState('');
+  const [searchSelect, setSearchSelect] = useState('');
+  const [productData, setProductData] = useState([]);
+  let [loading, setLoading] = useState(
+    <div className="d-flex justify-content-center">
+      <img src={arrow} alt="" />
+    </div>
+  );
+  const [visible, setVisible] = useState(3);
 
-const showMoreItems = (showLess)=>{
-  if(showLess== "showLess"){
- 
-    return 'show less'
+  async function getResponse() {
+    try {
+      const res = await fetch(
+        'https://my-json-server.typicode.com/shimonzhion/jsonBarber/barbers'
+      ).then((res) => res.json());
+      setProductData(await res);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading();
+    }
   }
-  if(visible >9){
-  setVisible(3)
-  }
-  setVisible((prevValue)=> prevValue +3)
-}
 
+  useEffect(() => {
+    setTimeout(() => {
+      getResponse();
+    }, 2000);
+  }, []);
+  const showMoreItems = (showLess) => {
+    if (visible == 18) {
+      return setArrow('');
+    } else if (visible > 18) {
+      return setVisible(3);
+    }
+    setVisible((prevValue) => prevValue + 3);
+  };
 
-  console.log(barbers);
   return (
-    <div className="bg-black barbers d-flex justify-content-center  ">
-      <div className="div-cards d-flex flex-wrap xs-w-100 bg-danger" style={{width:"80%" ,}}>
+    <div className="div-c d-flex justify-content-center bg-black">
+      <div className="div-barbers">
+        <div className="d-flex">
+          <InputGroup className="search-input-barbers ">
+            <InputGroup.Text className={' bg-light text-light-primary'}>
+              <BiSearch />
+            </InputGroup.Text>
+            <FormControl
+              placeholder="Search"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              className={' text-black '}
+            />
+          </InputGroup>
+          <div>
+            <select
+              className="form-select mx-5"
+              aria-label="Default select example"
+              onChange={(e) => setSearchSelect(e.target.value)}
+            >
+              <option value="">select city</option>
 
-      {
-        barbers?.slice(0,visible).map(Item=>{
-             return(  <Card className="card bg-dark mb-5  bg-opacity-25 text-light">
-          <CardMedia
-          className="img-card"
-            component="img"
-           
-            image={Item.img}
-            alt="barber-Img"
+              <option value={'Rishon Lzion'}>Rishon Lzion</option>
+              <option value="Tel Aviv-Yafo">Tel Aviv-Yafo</option>
+              <option value="Beer Sheva">Beer Sheva</option>
+            </select>
+          </div>
+        </div>
+        {loading}
+        <div className="d-flex flex-wrap">
+          <SearchFilter
+            value={searchInput || searchSelect}
+            data={productData}
+            renderResults={(results) =>
+              results?.slice(0, visible).map((Item) => {
+                return (
+                  <Card className="card bg-dark mt-5  bg-opacity-50 text-light">
+                    <CardMedia
+                      className="img-card"
+                      component="img"
+                      image={Item.img}
+                      alt="barber-Img"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {Item.title}
+                      </Typography>
+                      <Typography
+                        className="text-light"
+                        variant=""
+                        color="text.secondary"
+                      >
+                        {Item.location}
+                      </Typography>
+                      <Typography
+                        className="text-warning"
+                        variant="h6"
+                        color="text.secondary"
+                      >
+                        <GradeTwoToneIcon className="bg-dark bg-opacity-50 text-warning" />{' '}
+                        {Item.stars}
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button size="small">Share</Button>
+                      <a href={`teal:${Item}`}>
+                        <Button size="small">{Item.phone}</Button>
+                      </a>
+                    </CardActions>
+                  </Card>
+                );
+              })
+            }
           />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {Item.title}
-            </Typography>
-            <Typography className="text-light" variant="" color="text.secondary">
-            {Item.location} 
-            </Typography>
-            <Typography className="text-warning" variant="h6" color="text.secondary">
-            < GradeTwoToneIcon className="bg-dark bg-opacity-50 text-warning"/> {Item.stars}
-            </Typography>
-           
-       
-          </CardContent>
-          <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">{Item.phone}</Button>
-          </CardActions>
-        </Card>)
-        })
-      }
-     <div className="div-load-more">
-     <Button variant="contained" disableElevation onClick={showMoreItems}>
-     { visible <=9? 'Load more':showMoreItems()}
-    </Button>
-     </div>
+        </div>
+
+        {visible < 13 ? (
+          <div className="div-load-more d-flex flex-column align-items-center">
+            <img
+              className="arrow-gif"
+              src="/images/bb7d714a-next-arrow_02g02g02g02g000000.gif"
+              alt="arrow-gif"
+            />
+            <Button
+              className="btn-shoeMore "
+              variant="contained"
+              disableElevation
+              onClick={showMoreItems}
+            >
+              {visible <= 18 ? 'Load more' : showMoreItems(visible)}
+            </Button>
+          </div>
+        ) : (
+          ''
+        )}
       </div>
-      
-      </div>
-)
-};
+    </div>
+  );
+}
 
 export default Barbers;
