@@ -1,52 +1,4 @@
 
-.contact-us{
-display: flex;
-justify-content: center;
-background: url('https://images.pexels.com/photos/7697393/pexels-photo-7697393.jpeg?auto=compress&cs=tinysrgb&w=1600');
-background-size: 75vw;
-width: 60%;
-min-height: 95vh;
-}
-
-
-.contact-us h1{
-
-margin-top: 70px;
-color: white;
-margin-bottom: 50px;
-
-}
-.div-form{
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.091);
-
-}
-.form-contact{
-width: 100%;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    width: 800px;
-    justify-content: center;
-    align-items: center;
-
-    
-}
-
-.form-contact button{
-width: 20%;
-
-
-}
-.inputs{
-    width: 50%;
-    background: white;
-  
-}
-.div-container{
-    max-height: 95vh;
-} 
-
 @media only screen and (max-width: 600px) {
     .form-contact{
         
@@ -57,6 +9,7 @@ width: 20%;
             justify-content: center;
             align-items: center;
             padding-top: 30px;
+            
             
           
         }
@@ -82,9 +35,89 @@ width: 20%;
            
             }
             .inputs{
+
                 width: 80%;
-                background: white;
+                background: rgb(255, 255, 255);
+                  margin-bottom: 35px !important;
               
             }
+
+  }
+
+  @media only screen and (min-width: 600px) {
+
+
+    .div-container{
+       
+        max-height: 110vh !important ;
+        min-height: 100vh;
+    margin-bottom: 0px;
+    }
+    
+    .contact-us{
+    display: flex;
+    justify-content: center;
+    background: url('https://images.pexels.com/photos/7283614/pexels-photo-7283614.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-size: 50vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 60%;
+    /* height: 100vh; */
+    }
+    
+    
+    .contact-us h1{
+    
+    margin-top: 150px;
+    color: white;
+    margin-bottom: 50px;
+    
+    }
+    .div-form{
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.091);
+    
+    }
+    .form-contact{
+    width: 100%;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        /* width: 800px; */
+        justify-content: center;
+        align-items: center;
+    
+        
+    }
+    
+    .form-contact button{
+    width: 20%;
+    
+    
+    }
+    .inputs{
+        width: 50%;
+        background: white;
+        margin-bottom: 40px !important;
+      
+    }
+    .div-container{
+        max-height: 95vh;
+    } 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   }

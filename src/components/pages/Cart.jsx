@@ -15,7 +15,7 @@ const Cart = () => {
   } = useCart();
   return (
     <div className="bg-black">
-      <Container className="py-4 mt-3 bg-white" style={{ minHeight: '100vh' }}>
+      <Container className="py-4 mt-1 bg-white" style={{ minHeight: '100vh' }}>
         <h1 className={` 'text-l light-primary'} my-5  text-center`}>
           {isEmpty ? (
             <div>
@@ -23,7 +23,7 @@ const Cart = () => {
               <img
                 className="gif-cart mt-5"
                 src="images/empty.gif"
-                style={{ width: '40%' }}
+                style={{ width: '40%' ,minWidth:'300px'}}
                 alt=""
               />
             </div>
@@ -31,7 +31,7 @@ const Cart = () => {
             ''
           )}
         </h1>
-        <Row className="justify-content-center">
+        <Row className="justify-content-center mb-5">
           <Table responsive="sm" striped bordered hover className="mb-5">
             <tbody>
               {items.map((item, index) => {
@@ -73,6 +73,7 @@ const Cart = () => {
                     <td className="td-cart">Quantity ({item.quantity})</td>
                     <td className="td-cart">
                       <Button
+                            variant=""
                         onClick={() =>
                           updateItemQuantity(item.id, item.quantity - 1)
                         }
@@ -81,6 +82,7 @@ const Cart = () => {
                         -
                       </Button>
                       <Button
+                            variant=""
                         onClick={() =>
                           updateItemQuantity(item.id, item.quantity + 1)
                         }
@@ -89,11 +91,11 @@ const Cart = () => {
                         +
                       </Button>
                       <Button
-                        variant="danger"
+                        variant=""
                         onClick={() => removeItem(item.id)}
-                        className="ms-1"
+                        className=""
                       >
-                        Remove Item
+                       x
                       </Button>
                     </td>
                   </tr>
@@ -104,7 +106,7 @@ const Cart = () => {
           {!isEmpty && (
             <Row
               style={{ position: 'fixed', bottom: 0 }}
-              className={'bg-light text-balck d-flex justify-content-center '}
+              className={'bg-light text-balck d-flex justify-content-center  '}
             >
               <Col className="py-2">
                 <h4>Total Price: $ {cartTotal}</h4>
@@ -120,7 +122,7 @@ const Cart = () => {
                 </Button>
                 <Button variant="success" className="m-2">
                   <BsCartCheck size="1.7rem" />
-                 Pay
+                 Pay ${cartTotal}
                 </Button>
               </Col>
             </Row>

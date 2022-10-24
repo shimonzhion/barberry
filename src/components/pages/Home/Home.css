@@ -1,33 +1,16 @@
-.div-signIn{
-    height: 100%;
-    width: 100%;
-}
-
-.form-signIn{
-    width: 100%;
-    border-radius: 20px ;
-     padding-top: 15px;
-     height: 60%;
-}
-
-.div-signUp{
-    height: 100%;
-    width: 100%;
-}
-
-.form-signUp{
-    width: 100%;
-    
-    border-radius: 20px ;
-    margin: auto;
-    padding-left: 50px;
-    padding-right: 50px;
-    color: rgb(0, 0, 0);
-    padding-bottom: 50px;
-}
 
 
 @media screen and (min-width:600px) {
+
+    .div-signIn{
+        height: 100%;
+        width: 100%;
+    }
+    .div-signUp{
+        height: 100%;
+        width: 100%;
+    }
+    
     .form-signUp{
         width: 80%;
         
@@ -41,9 +24,45 @@
 
     .form-signIn{
         width: 80%;
-        max-height: 60%;
+        max-height: 80%;
+        height: 60%;
         border-radius: 20px ;
          padding-top: 15px;
+         padding-bottom: 205px;
     }
 
+}
+
+
+@media screen and (max-width:600px) {
+    .div-signIn{
+        height: 100%;
+        width: 100%;
+    }
+    
+    .form-signIn{
+        width: 100%;
+        border-radius: 20px ;
+         padding-top: 15px;
+         max-height:60%;
+        
+    }
+    
+    .div-signUp{
+        height: 100%;
+        width: 100%;
+    }
+    
+    .form-signUp{
+        width: 100%;
+        
+        border-radius: 20px ;
+        margin: auto;
+        padding-left: 50px;
+        padding-right: 50px;
+        color: rgb(0, 0, 0);
+        padding-bottom: 50px;
+        
+    }
+    
 }

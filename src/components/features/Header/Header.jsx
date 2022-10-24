@@ -35,7 +35,8 @@ export default function Header() {
   useEffect(() => setAuth(login), []);
   console.log(auth, 'header');
 
-  const { isEmpty, totalItems } = useCart();
+  const { isEmpty, totalItems,setTotalItems } = useCart();
+
 
   const handleChange = () => {
     setLogin(false);
