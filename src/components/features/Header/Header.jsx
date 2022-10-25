@@ -28,7 +28,7 @@ const drawerWidth = 240;
 export default function Header() {
   const home = useNavigate();
   const { login, setLogin } = useContext(usersContext);
-  const [auth, setAuth] = useState(login);
+  const [auth, setAuth] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navItems = ['Store', 'ContactUs'];
 
@@ -39,7 +39,7 @@ export default function Header() {
 
 
   const handleChange = () => {
-    setLogin(false);
+    setLogin(true);
     home('/');
     return setAuth(login);
   };
