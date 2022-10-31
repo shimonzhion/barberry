@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css"
-import { BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import { CartProvider } from 'react-use-cart';
 
@@ -12,7 +12,11 @@ root.render(
   <React.StrictMode>
      <CartProvider>
  <BrowserRouter>
-        <App />
+ <Routes>
+ <Route path="*" element={ <App /> }>
+   
+        </Route>
+        </Routes>
         </BrowserRouter>
       </CartProvider>
 

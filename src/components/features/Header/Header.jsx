@@ -19,7 +19,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import { useState } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { usersContext } from '../../../contexts/users-context';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 import { BiCart } from 'react-icons/bi';
 import { useCart } from 'react-use-cart';
 
@@ -58,6 +58,10 @@ export default function Header() {
       },
     },
   });
+
+  const goToPage = (e, pageName) => {
+    home("/Store");
+  }
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -102,7 +106,7 @@ export default function Header() {
         </ListItem>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton href={`/${item}`} sx={{ textAlign: 'center' }}>
+            <ListItemButton onClick={() => {goToPage(e, item)}} sx={{ textAlign: 'center' }}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -110,6 +114,12 @@ export default function Header() {
       </List>
     </Box>
   );
+
+  return (
+    <div>
+      <button onClick={() => goToPage("/Store")}>Store</button>
+    </div>
+  )
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -211,7 +221,7 @@ export default function Header() {
                 </Button>
 
                 {navItems.map((item) => (
-                  <Button href={`/${item}`} key={item} sx={{ color: '#fff' }}>
+                  <Button href={`${item}`} key={item} sx={{ color: '#fff' }}>
                     {item}
                   </Button>
                 ))}
