@@ -1,70 +1,7 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Screen Shot 2024-03-21 at 14 25 21 PM](https://github.com/shimonzhion/barberry/assets/102303385/0fb50b5b-559a-46fa-bc68-d431cf037d65)
+![Screen Shot 2024-03-21 at 14 25 30 PM](https://github.com/shimonzhion/barberry/assets/102303385/4c468031-7d44-4db6-9a0f-1b32a0fdb9c0)
+![Screen Shot 2024-03-21 at 14 23 15 PM](https://github.com/shimonzhion/barberry/assets/102303385/a9f00a72-ea5e-4d90-a1b7-4fa39f70585d)
+![Screen Shot 2024-03-21 at 14 23 36 PM](https://github.com/shimonzhion/barberry/assets/102303385/8f7982c6-45f2-4dc8-be5c-dea74626fa52)
+![Screen Shot 2024-03-21 at 14 24 10 PM](https://github.com/shimonzhion/barberry/assets/102303385/0850d50c-7331-401f-8094-9cab8defb24d)
+![Screen Shot 2024-03-21 at 14 24 59 PM](https://github.com/shimonzhion/barberry/assets/102303385/1c061463-5818-4c1f-8b61-731edeceffa4)
+![Screen Shot 2024-03-21 at 14 24 26 PM](https://github.com/shimonzhion/barberry/assets/102303385/8ba86052-f9b8-4d96-a4e4-b463f2a85891)
